@@ -1,0 +1,184 @@
+
+screen (
+	width: 220, 
+	height: 140,
+	cameraPosition: [0,-60,40], 
+	cameraDirection: [0,1,0], 
+	pixelSize: 0.04,
+	screenDistance: 7	
+)
+
+bgcol(
+	color: [0., 0., 0.]
+)
+
+group(
+	type: union,
+	k: 0.0,
+	orig: [0,120,30],
+	color: [0.8,0.2,0.2],
+	roughness: 0.001,
+	reflectance: 0.0,
+	rotation: [60.0,0.0,0.0],
+	members: [
+		
+		group(
+			type: subtract,
+			k: 1.0,
+			rotation: [11,10,0],
+			rotationOrder: yxz,
+			members: [
+				ellipsoid(
+					orig: [27,0,4],
+					r: [20,12,4]
+				),
+				ellipsoid(
+					orig: [27,0,6],
+					r: [20,11,1]
+				)
+			]
+		)
+		group(
+			type: subtract,
+			k: 1.0,
+			rotation: [10,10,-45],
+			rotationOrder: yxz,
+			members: [
+				ellipsoid(
+					orig: [20,20,4],
+					r: [20,12,4]
+				),
+				ellipsoid(
+					orig: [20,20,6],
+					r: [20,12,1]
+				)
+			]
+		)
+		group(
+			type: subtract,
+			k: 1.0,
+			rotation: [9,10,-90],
+			rotationOrder: yxz,
+			members: [
+				ellipsoid(
+					orig: [0,27,4],
+					r: [20,12,4]
+				),
+				ellipsoid(
+					orig: [0,27,6],
+					r: [20,11,1]
+				)
+			]
+		)
+		group(
+			type: subtract,
+			k: 1.0,
+			rotation: [10,10,-135],
+			rotationOrder: yxz,
+			members: [
+				ellipsoid(
+					orig: [-20,20,4],
+					r: [20,12,4]
+				),
+				ellipsoid(
+					orig: [-20,20,6],
+					r: [19,12,1]
+				)
+			]
+		)
+		group(
+			type: subtract,
+			k: 1.0,
+			rotation: [9,10,-180],
+			rotationOrder: yxz,
+			members: [
+				ellipsoid(
+					orig: [-27,0,4],
+					r: [20,12,4]
+				),
+				ellipsoid(
+					orig: [-27,0,6],
+					r: [20,12,1]
+				)
+			]
+		)
+		group(
+			type: subtract,
+			k: 1.0,
+			rotation: [10,10,-225],
+			rotationOrder: yxz,
+			members: [
+				ellipsoid(
+					orig: [-20,-20,4],
+					r: [20,12,4]
+				),
+				ellipsoid(
+					orig: [-20,-20,6],
+					r: [20,12,1]
+				)
+			]
+		)
+		group(
+			type: subtract,
+			k: 1.0,
+			rotation: [11,10,-270],
+			rotationOrder: yxz,
+			members: [
+				ellipsoid(
+					orig: [0,-27,4],
+					r: [20,12,4]
+				),
+				ellipsoid(
+					orig: [0,-27,6],
+					r: [19,12,1]
+				)
+			]
+		)
+		group(
+			k: 1.0,
+			rotation: [10,10,-315],
+			rotationOrder: yxz,
+			members: [
+				ellipsoid(
+					orig: [20,-20,4],
+					r: [20,12,4]
+				),
+				ellipsoid(
+					orig: [20,-20,6],
+					r: [19,12,1]
+				)
+			]
+		)
+	]
+)
+
+# core
+ellipsoid(
+	orig: [0,101,30],
+	r: [12,12,5],
+	color: [0.6,0.6,0.2],
+	roughness: 0.05,
+	reflectance: 0.0,
+	rotation: [-60,0.0,0.0]
+)
+
+
+plane(
+	color: [0.9,0.9,0.9],
+	orig: [0,70,-30],
+	normal: [0,0,1],
+	reflectance: 0.0
+)
+plane(
+	color: [0.9,0.9,0.9],
+	orig: [0,450,-90],
+	normal: [0,-1,0],
+	reflectance: 0.0
+)
+
+
+roundlight(
+	orig: [0,-40,240],
+	rad: [3,3,3],
+	color: [1,1,1]
+)

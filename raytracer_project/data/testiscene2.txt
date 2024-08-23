@@ -1,0 +1,59 @@
+
+screen (
+	width: 220, 
+	height: 140,
+	cameraPosition: [0,0,0], 
+	cameraDirection: [0,1,0], 
+	pixelSize: 0.05,
+	screenDistance: 7	
+)
+
+bgcol(
+	color: [0.7, 0.4, 0.2]
+	)
+
+group(
+	type: union,
+	k: 4.0,
+	color: [0.1, 0.5, 0.3],
+	rotation: [0.0, -0.8, 0.2],
+	reflectance: 0.2,
+	members: [
+		group(
+			type: subtract,
+			k: 2.0,
+			members: [
+				ellipsoid(
+					orig: [0,100,0],
+					rad: [40,35,40]
+				),
+				ellipsoid(
+					orig: [5,100,-3],
+					rad: [50,40,5]
+				)
+			]
+		),
+		box(
+			orig:[-20,85,0],
+			rad: [5,5,100]
+		)
+	]
+)
+
+plane(
+	orig: [0,70,-60],
+	normal: [0,0,1],
+	color: [0.4,0.5,0.8]
+)
+
+roundlight(
+	orig: [-60,-80,80],
+	rad: [3,3,3],
+	color: [1,1,1]
+)
+
+roundlight(
+	orig: [60,-80, 110],
+	rad: [3,3,3],
+	color: [1,1,1]
+)

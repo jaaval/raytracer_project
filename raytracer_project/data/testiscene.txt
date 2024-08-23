@@ -1,0 +1,128 @@
+
+screen (
+	width: 1800, 
+	height: 1200,
+	cameraPosition: [0,-8,0], 
+	cameraDirection: [0,1,0], 
+	pixelSize: 0.008,
+	screenDistance: 8	
+)
+
+bgcol(
+	color: [0., 0., 0.]
+)
+
+group(
+	type: union,
+	k: 40.0,
+	rotation: [0,0,0],
+	orig: [0, 300, 0],
+	members: [
+		plane(
+			color: [0.4,0.5,0.8],
+			orig: [0,70,-60],
+			normal: [0,0,1],
+			roughness:0.01,
+			reflectance: 0
+		),
+		box(
+			color: [0.8,0.3,0.4],
+			rotation:[0,0,-38],
+			refractIndex: 1.5,
+			transparity: 0.0,
+			reflectance: 0.0,
+			orig:[30,0,-60],
+			rotationOrder: xyz,
+			s: [20,20,140]
+		),
+		box(
+			color: [0.7,0.4,0.4],
+			rotation:[-10,0,-38],
+			refractIndex: 1.5,
+			transparity: 0.0,
+			reflectance: 0.0,
+			orig:[30,0,0],
+			rotationOrder: xyz,
+			s: [20,80,20]
+		)
+	]
+)
+
+ellipsoid(
+	orig: [-110, 300, 70],
+	r: [65,65,65],
+	color: [0.2,0.2,0.2],
+	reflectance: 0.9,
+	roughness: 0
+)
+
+ellipsoid(
+	orig: [15, 180, 15],
+	r: [35,10,35],
+	color: [0.2,0.2,0.2],
+	reflectance: 0.15,
+	transparity: 0.85,
+	refractIndex: 1.5,
+	roughness: 0
+)
+
+ellipsoid(
+	orig: [200, 400, 25],
+	r: [35,20,80],
+	color: [0.2,0.2,0.2],
+	reflectance: 0.9,
+	transparity: 0.0,
+	refractIndex: 1.5,
+	roughness: 0
+)
+
+group(
+	type: union,
+	k: 10,
+	orig: [-70, 150, -20],
+	rotation: [-20,0,10],
+	members: [
+		torus(
+			t: [20,6],
+			rotation: [0,0,0],
+			reflectance: 0.7,
+			color: [0.1,0.2,0.3],
+		)
+		torus(
+			t: [20,6],
+			rotation: [90,0,0],
+			reflectance: 0.7,
+			color: [0.1,0.2,0.3],
+		)
+]
+)
+
+
+ellipsoid(
+	orig: [-120,350,-40],
+	r: [40,20,20],
+	roughness: 0.3,
+	reflectance: 0,
+	color: [0.2,0.2,0.23]
+)
+ellipsoid(
+	orig: [70,120,-45],
+	r: [50,15,20],
+	roughness: 0.35,
+	reflectance: 0,
+	color: [0.2,0.26,0.23]
+)
+
+
+
+roundlight(
+	orig: [-400,-80,700],
+	r: [3,3,3],
+	color: [1,1,1]
+)
+
+roundlight(
+	orig: [70,150,240],
+	r: [3,3,3],
+	color: [1,1,1]
+)
