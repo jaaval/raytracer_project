@@ -49,7 +49,7 @@ std::function<void(int)> ThreadPool::pop()
 {
 	std::function<void(int id)>* _f = nullptr; // null pointer to a task
 	this->q.pop(_f); // remove task, _f is the task now
-	std::unique_ptr<std::function<void(int id)>> func(_f); // no clue
+	std::unique_ptr<std::function<void(int id)>> func(_f); 
 	std::function<void(int)> f;
 	if (_f)
 		f = *_f;
