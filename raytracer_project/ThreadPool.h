@@ -113,7 +113,6 @@ public:
     void stop(bool isWait = false);
 
 
-    // TODO try to understand these template shits
     template<typename F, typename... Rest>
     auto push(F&& f, Rest&&... rest) ->std::future<decltype(f(0, rest...))> {
         auto pck = std::make_shared<std::packaged_task<decltype(f(0, rest...))(int)>>(
